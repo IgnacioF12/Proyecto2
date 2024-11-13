@@ -1,4 +1,9 @@
 /* ArithmeticProcess.java */
+/**
+** Hecho por: Erick Motta
+** Carnet: 24003932
+** Seccion: A
+**/
 
 package scheduler.processing;
 
