@@ -26,6 +26,7 @@ public abstract class PP extends Policy implements Enqueable {
         conAndLoopProcess3 = new ConcurrentLinkedQueue<>();
     }
 
+    /* Agrega el proceso a la fila segun el orden de prioridad */
     @Override
     public void add(SimpleProcess p) {
         if (p instanceof IOProcess) {
@@ -61,6 +62,28 @@ public abstract class PP extends Policy implements Enqueable {
             arithProcess2.poll();
         } else {
             conAndLoopProcess3.poll();
+        }
+    }
+
+    /*
+     * Saca el proceso en turno tomando el cuenta el tiempo segun el tipo de proceso
+     */
+    public void procesar() {
+        if (!ioProcess1.isEmpty()) {
+            SimpleProcess p = ioProcess1.poll();
+            long t = p.getTiempoRestante();
+
+            p.ejecutar(t);
+        } else if (!arithProcess2.isEmpty()) {
+            SimpleProcess p = arithProcess2.poll();
+            long t = p.getTiempoRestante();
+
+            p.ejecutar(t);
+        } else {
+            SimpleProcess p = conAndLoopProcess3.poll();
+            long t = p.getTiempoRestante();
+
+            p.ejecutar(t);
         }
     }
 }
