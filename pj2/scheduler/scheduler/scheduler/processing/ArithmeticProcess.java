@@ -4,7 +4,7 @@
 ** Carnet: 24003932
 ** Seccion: A
 **/
-//*Implementación del proceso ArithmeticProcess, que permite que daca proceso aritmético tenga un tiempo de ejecución fijo*//
+//*Implementación del proceso ArithmeticProcess, que permite que cada proceso aritmético tenga un tiempo de ejecución fijo*//
 
 package scheduler.processing;
 //*Tiempo fijo en milisegundos para los procesos aritméticos*//
