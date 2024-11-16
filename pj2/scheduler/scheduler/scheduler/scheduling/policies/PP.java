@@ -14,7 +14,7 @@ import scheduler.processing.LoopProcess;
 import scheduler.processing.SimpleProcess;
 import java.util.concurrent.ConcurrentLinkedQueue;;
 
-public abstract class PP extends Policy implements Enqueable {
+public class PP extends Policy implements Enqueable {
 
     private ConcurrentLinkedQueue<SimpleProcess> ioProcess1;
     private ConcurrentLinkedQueue<SimpleProcess> arithProcess2;
