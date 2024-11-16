@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Esta clase implementa la política Round-Robin (RR),
  * asignando a cada proceso un quantum fijo de tiempo antes de rotarlos.
  */
-public class RRPolicy implements Enqueable {
+public class RRPolicy extends Policy implements Enqueable {
 
     private ConcurrentLinkedQueue<SimpleProcess> queue;
     private long quantum; // Cambié el tipo a long ya que el tiempo debería ser en milisegundos enteros

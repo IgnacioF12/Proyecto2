@@ -9,7 +9,7 @@ import java.util.Stack;
  * Esta clase implementa la política Last-Come-First-Served (LCFS),
  * en la que el último proceso en llegar es el primero en ser atendido.
  */
-public class LCFSPolicy implements Enqueable {
+public class LCFSPolicy extends Policy implements Enqueable {
 
     private Stack<SimpleProcess> stack;
 
