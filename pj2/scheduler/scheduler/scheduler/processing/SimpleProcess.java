@@ -10,7 +10,7 @@ public abstract class SimpleProcess {
 	 **/
 	protected int id;
 	/** El tiempo restante de ejecución del proceso (en milisegundos). **/
-	protected long tiempoRestante;
+	protected double tiempoRestante;
 
 	/**
 	 * Inicializa el SimpleProcess con un id específico y un tiempo de servicio.
@@ -19,7 +19,7 @@ public abstract class SimpleProcess {
 	 * @param tiempoRestante representa el tiempo que el proceso necesita para
 	 *                       completar su ejecución
 	 */
-	public SimpleProcess(int id, long tiempoRestante) {
+	public SimpleProcess(int id, double tiempoRestante) {
 		this.id = id;
 		this.tiempoRestante = tiempoRestante;
 	}
@@ -38,7 +38,7 @@ public abstract class SimpleProcess {
 	 * 
 	 * @return el tiempo restante en milisegundos
 	 */
-	public long getTiempoRestante() {
+	public double getTiempoRestante() {
 		return this.tiempoRestante;
 	}
 
@@ -47,7 +47,7 @@ public abstract class SimpleProcess {
 	 * 
 	 * @param tiempoRestante el nuevo tiempo restante en milisegundos
 	 */
-	public void setTiempoRestante(long tiempoRestante) {
+	public void setTiempoRestante(double tiempoRestante) {
 		this.tiempoRestante = tiempoRestante;
 	}
 
@@ -56,7 +56,7 @@ public abstract class SimpleProcess {
 	 * ejecuta el proceso.
 	 * Este método ahora acepta un parámetro de tiempo.
 	 */
-	public abstract void ejecutar(long tiempo);
+	public abstract void ejecutar(double tiempo);
 
 	/**
 	 * Formato imprimible para objetos SimpleProcess

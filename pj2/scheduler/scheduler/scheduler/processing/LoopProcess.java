@@ -10,17 +10,18 @@ package scheduler.processing;
 
 public class LoopProcess extends SimpleProcess {
     // *Tiempo fijo en milisegundos para los procesos de tipo loop*//
-    private static final long TIEMPO_PROCESO = 600;
+    private double tiempoServicio;
 
     // *Constructor pra el proceso*//
-    public LoopProcess(int id) {
-        super(id, TIEMPO_PROCESO); // *Se le asigna su id y tiempo fijo al proceso*//
+    public LoopProcess(int id, double tiempoServicio) {
+        super(id, tiempoServicio);
+        this.tiempoServicio = tiempoServicio; // *Se le asigna su id y tiempo fijo al proceso*//
     }
 
     // *Se ejecuta el proceso, disminyuendo el tiempo restante según el tiempo
     // ingresado*//
     @Override
-    public void ejecutar(long tiempo) {
+    public void ejecutar(double tiempo) {
         setTiempoRestante(getTiempoRestante() - tiempo);
     }
 }

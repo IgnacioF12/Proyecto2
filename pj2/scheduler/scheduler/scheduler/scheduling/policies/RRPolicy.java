@@ -52,6 +52,10 @@ public class RRPolicy extends Policy implements Enqueable {
         return queue.peek();
     }
 
+    public long getQuantum() {
+        return this.quantum;
+    }
+
     /**
      * Procesa el siguiente proceso en la cola por el tiempo del quantum.
      */
@@ -59,8 +63,8 @@ public class RRPolicy extends Policy implements Enqueable {
         if (!queue.isEmpty()) {
             SimpleProcess proceso = queue.poll();
 
-            long tiempoRestante = proceso.getTiempoRestante();
-            long tiempoProcesado = Math.min(quantum, tiempoRestante);
+            double tiempoRestante = proceso.getTiempoRestante();
+            double tiempoProcesado = Math.min(quantum, tiempoRestante);
 
             proceso.ejecutar(tiempoProcesado); // Ejecuta el proceso por el tiempo de quantum (en milisegundos)
             proceso.setTiempoRestante(tiempoRestante - tiempoProcesado);

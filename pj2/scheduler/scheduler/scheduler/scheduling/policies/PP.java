@@ -71,17 +71,17 @@ public class PP extends Policy implements Enqueable {
     public void procesar() {
         if (!ioProcess1.isEmpty()) {
             SimpleProcess p = ioProcess1.poll();
-            long t = p.getTiempoRestante();
+            double t = p.getTiempoRestante();
 
             p.ejecutar(t);
         } else if (!arithProcess2.isEmpty()) {
             SimpleProcess p = arithProcess2.poll();
-            long t = p.getTiempoRestante();
+            double t = p.getTiempoRestante();
 
             p.ejecutar(t);
         } else {
             SimpleProcess p = conAndLoopProcess3.poll();
-            long t = p.getTiempoRestante();
+            double t = p.getTiempoRestante();
 
             p.ejecutar(t);
         }

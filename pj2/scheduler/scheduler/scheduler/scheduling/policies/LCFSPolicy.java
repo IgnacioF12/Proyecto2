@@ -55,7 +55,7 @@ public class LCFSPolicy extends Policy implements Enqueable {
     public void procesar() {
         if (!stack.isEmpty()) {
             SimpleProcess proceso = stack.pop();
-            long tiempoRestante = proceso.getTiempoRestante(); // Obtiene el tiempo restante
+            double tiempoRestante = proceso.getTiempoRestante(); // Obtiene el tiempo restante
 
             // Llama a ejecutar pasando el tiempo restante como argumento
             proceso.ejecutar(tiempoRestante); // Aquí ejecutamos con el tiempo restante

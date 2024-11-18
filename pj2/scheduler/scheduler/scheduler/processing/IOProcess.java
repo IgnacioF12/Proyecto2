@@ -15,19 +15,19 @@ import scheduler.processing.SimpleProcess;
  */
 public class IOProcess extends SimpleProcess {
 
-    private long tiempoServicio;
+    private double tiempoServicio;
 
-    public IOProcess(int id, long tiempoServicio) {
+    public IOProcess(int id, double tiempoServicio) {
         super(id, tiempoServicio); // Llama al constructor de SimpleProcess
         this.tiempoServicio = tiempoServicio;
     }
 
-    public long getTiempoServicio() {
+    public double getTiempoServicio() {
         return tiempoServicio;
     }
 
     @Override
-    public void ejecutar(long tiempo) {
+    public void ejecutar(double tiempo) {
         try {
             // Verificar si el tiempo de servicio es válido
             if (tiempo < 0) {
@@ -35,7 +35,7 @@ public class IOProcess extends SimpleProcess {
             }
 
             System.out.println("Ejecutando IOProcess con ID: " + getId() + " por " + tiempo + " ms.");
-            Thread.sleep(tiempo); // Aquí se puede lanzar InterruptedException
+            Thread.sleep((long) tiempo * 1000); // Aquí se puede lanzar InterruptedException
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.out.println("El proceso fue interrumpido.");

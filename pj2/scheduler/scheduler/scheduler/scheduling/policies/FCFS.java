@@ -46,7 +46,7 @@ public class FCFS extends Policy implements Enqueable {
     public void procesar() {
         if (!queue.isEmpty()) {
             SimpleProcess proceso = queue.peek();
-            long tiempoRestante = proceso.getTiempoRestante();
+            double tiempoRestante = proceso.getTiempoRestante();
 
             proceso.ejecutar(tiempoRestante); // *ejecuta el proceso en cuestión de su tiempo total*//
 
