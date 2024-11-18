@@ -8,7 +8,7 @@
 
 package scheduler.processing;
 
-//*Tiempo fijo en milisegundos para los procesos aritméticos*//
+//*Tiempo variable*//
 public class ArithmeticProcess extends SimpleProcess {
 
     private double tiempoServicio;

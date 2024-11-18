@@ -9,7 +9,7 @@
 package scheduler.processing;
 
 public class LoopProcess extends SimpleProcess {
-    // *Tiempo fijo en milisegundos para los procesos de tipo loop*//
+    // *Tiempo variable*//
     private double tiempoServicio;
 
     // *Constructor pra el proceso*//
